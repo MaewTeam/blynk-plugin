@@ -1,8 +1,10 @@
 const BLYNK_BEGIN = "DEV_IO.Blynk()";
 
 Blockly.JavaScript['blynk_begin'] = function (block) {
-  var text_auth = block.getFieldValue('auth');
-  var code = `${BLYNK_BEGIN}.begin("${text_auth}");\n`;
+  var text_template_id = block.getFieldValue('Template_ID');
+  var text_device_name = block.getFieldValue('Device_Name');
+  var text_host = block.getFieldValue('host');
+  var code = `${BLYNK_BEGIN}.begin("${text_auth}","${text_template_id}", ${text_device_name});\n`;
   return code;
 };
 
@@ -10,7 +12,7 @@ Blockly.JavaScript['blynk_begin_wifi_local_server'] = function (block) {
   var text_auth = block.getFieldValue('auth');
   var text_host = block.getFieldValue('host');
   var number_port = block.getFieldValue('port');
-  var code = `${BLYNK_BEGIN}.begin("${text_auth}", "${text_host}", ${number_port});\n`;
+  var code = `${BLYNK_BEGIN}.begin("${text_auth}", );\n`;
   return code;
 };
 
