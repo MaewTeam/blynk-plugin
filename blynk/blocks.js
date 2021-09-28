@@ -2,7 +2,11 @@ Blockly.Blocks['blynk_begin'] = {
   init: function () {
     this.appendDummyInput()
       .appendField(Blockly.Msg.BYLNK_BEGIN_MESSAGE + "  token:")
-      .appendField(new Blockly.FieldTextInput(""), "auth");
+      .appendField(new Blockly.FieldTextInput(""), "auth")
+      .appendField("Template_ID")
+      .appendField(new Blockly.FieldTextInput(""), "Template_ID")
+      .appendField("Device_Name")
+      .appendField(new Blockly.FieldTextInput(""), "Device_Name");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(165);
